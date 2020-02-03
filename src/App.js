@@ -57,7 +57,7 @@ const options = {
   theme: 'light',
   defaultPosition: {
     top: 500,
-    left: 1100
+    left: 50
   }
 }
 
