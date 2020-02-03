@@ -147,7 +147,7 @@ function App () {
           </form>
         </div>
         <div className='flex-large'>
-          <img src='wallLeft.jpg' width='500' height='600' />
+          <img src='wallLeft.jpg' width='500' height='600' alt='Wall' />
         </div>
         <ReactJkMusicPlayer {...options} />
       </div>
