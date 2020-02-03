@@ -58,7 +58,8 @@ const options = {
   defaultPosition: {
     top: 500,
     left: 50
-  }
+  },
+  autoPlay: false
 }
 
 function App () {
