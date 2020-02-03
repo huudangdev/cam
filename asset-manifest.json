@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/cam/static/css/main.7f924cfd.chunk.css",
+    "main.js": "/cam/static/js/main.fc87f771.chunk.js",
+    "main.js.map": "/cam/static/js/main.fc87f771.chunk.js.map",
+    "runtime-main.js": "/cam/static/js/runtime-main.97fc2d93.js",
+    "runtime-main.js.map": "/cam/static/js/runtime-main.97fc2d93.js.map",
+    "static/css/2.b76e8f72.chunk.css": "/cam/static/css/2.b76e8f72.chunk.css",
+    "static/js/2.5c9a4efe.chunk.js": "/cam/static/js/2.5c9a4efe.chunk.js",
+    "static/js/2.5c9a4efe.chunk.js.map": "/cam/static/js/2.5c9a4efe.chunk.js.map",
+    "index.html": "/cam/index.html",
+    "precache-manifest.4bb46fc97ec6d8961c41120a534a43b1.js": "/cam/precache-manifest.4bb46fc97ec6d8961c41120a534a43b1.js",
+    "service-worker.js": "/cam/service-worker.js",
+    "static/css/2.b76e8f72.chunk.css.map": "/cam/static/css/2.b76e8f72.chunk.css.map",
+    "static/css/main.7f924cfd.chunk.css.map": "/cam/static/css/main.7f924cfd.chunk.css.map",
+    "static/js/2.5c9a4efe.chunk.js.LICENSE.txt": "/cam/static/js/2.5c9a4efe.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.97fc2d93.js",
+    "static/css/2.b76e8f72.chunk.css",
+    "static/js/2.5c9a4efe.chunk.js",
+    "static/css/main.7f924cfd.chunk.css",
+    "static/js/main.fc87f771.chunk.js"
+  ]
+}
