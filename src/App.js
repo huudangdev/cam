@@ -10,32 +10,13 @@ import FileTable from './components/FileTable'
 function App () {
   const [files, setFiles] = useState([])
 
-  // async function run () {
-  //   // Load and plot the original input data that we are going to train on.
-  //   const values = files.map(d => ({
-  //     x: d.level,
-  //     y: d.questions
-  //   }))
-  //   tfvis.render.scatterplot(
-  //     { name: 'No.of level & questions' },
-  //     { values },
-  //     {
-  //       xLabel: 'No. of Level',
-  //       yLabel: 'Questions',
-  //       height: 300
-  //     }
-  //   )
-  //   // More code will be added below
-  // }
-
   const onChangeFile = (file) => {
   }
 
   const onAnalyticFile = (file) => {
-    // if (files.length > 0) files.pop()
+    if (files.length === 0) file.id = 1
+    else file.id = files.length + 1
     setFiles([...files, file])
-    // const totalQuestions = files.reduce((accumulator, currentValue) => accumulator + currentValue.questions)
-    // setFiles([...files, { name: 'Tổng cộng', questions: totalQuestions }])
   }
 
   const onSubmit = (file) => {
@@ -54,7 +35,6 @@ function App () {
   const deleteRow = id => {
     setFiles(files.filter(file => file.id !== id))
   }
-  console.log(files)
 
   return (
     <>

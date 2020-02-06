@@ -25,9 +25,7 @@ const UploadFile = ({ onChangeFile, onSubmit, onAnalyticFile }) => {
         text: 'Cần để file vào.',
         icon: 'error'
       })
-    }
-
-    setLoading(1)
+    } else { setLoading(1) }
 
     onSubmit(selectedFile).then((res) => {
       setLoading(0)
@@ -65,7 +63,6 @@ const UploadFile = ({ onChangeFile, onSubmit, onAnalyticFile }) => {
       })
     })
   }
-  console.log(loading)
   if (loading) {
     return (
       <>
