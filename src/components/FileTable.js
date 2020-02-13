@@ -36,7 +36,7 @@ const FileTable = ({ files, editRow, deleteRow }) => {
                         editRow(file)
                       }}
                     >
-                      Edit
+                      Details
                     </button>
                     <button
                       className='button muted-button'
