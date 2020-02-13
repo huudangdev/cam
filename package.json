@@ -13,7 +13,6 @@
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
     "form-data": "^3.0.0",
-    "gatsby": "^2.19.16",
     "gh-pages": "^2.2.0",
     "install": "^0.13.0",
     "npm": "^6.13.7",
@@ -33,7 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gatsby build && cp ./static/CNAME public/ &&gh-pages -d public --branch master"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
