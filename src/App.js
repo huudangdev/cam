@@ -27,7 +27,6 @@ const App = () => {
             />
             <Route
               path={root + '/editor'}
-              exact
               component={props => (
                 <EditorPage {...props} documentStore={documentStore} />
               )}
