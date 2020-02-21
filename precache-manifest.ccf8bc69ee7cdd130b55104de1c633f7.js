@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cfdd5105914486b5add621682d2dfb11",
+    "revision": "1b0b82d984323b4d1c9e5735e9066a06",
     "url": "/cam/index.html"
   },
   {
-    "revision": "a443648101c09d369a5c",
+    "revision": "fa40c75c0cc6d4bc374c",
     "url": "/cam/static/css/2.b76e8f72.chunk.css"
   },
   {
-    "revision": "7d2b717bd20631fe336a",
+    "revision": "9a23b037d6ee621398df",
     "url": "/cam/static/css/main.6f8043f2.chunk.css"
   },
   {
-    "revision": "a443648101c09d369a5c",
-    "url": "/cam/static/js/2.163d3666.chunk.js"
+    "revision": "fa40c75c0cc6d4bc374c",
+    "url": "/cam/static/js/2.15336de6.chunk.js"
   },
   {
     "revision": "5f6fa0d322eba48732c5c066e148e71b",
-    "url": "/cam/static/js/2.163d3666.chunk.js.LICENSE.txt"
+    "url": "/cam/static/js/2.15336de6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7d2b717bd20631fe336a",
-    "url": "/cam/static/js/main.bc92dbd4.chunk.js"
+    "revision": "9a23b037d6ee621398df",
+    "url": "/cam/static/js/main.ee3bfdef.chunk.js"
   },
   {
     "revision": "c6da4fed4aa5754b390c",
