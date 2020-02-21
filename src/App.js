@@ -1,57 +1,38 @@
-import React, { useState } from 'react'
-import axios from 'axios'
-import FormData from 'form-data'
+import React from 'react'
+import HomePage from './HomePage'
+import EditorPage from './Editor'
+import { Router, Route } from 'react-router-dom'
+import { createBrowserHistory as createHistory } from 'history'
+import TopBar from './components/TopBar'
+import { DocumentStore } from './store'
 import './App.css'
 
-import MusicPlayer from './components/MusicPlayer'
-import UploadFile from './components/UploadFile'
-import FileTable from './components/FileTable'
+const history = createHistory()
+const documentStore = new DocumentStore()
 
-function App () {
-  const [files, setFiles] = useState([])
-
-  const onChangeFile = (file) => {
-  }
-
-  const onAnalyticFile = (file) => {
-    if (files.length === 0) file.id = 1
-    else file.id = files.length + 1
-    setFiles([...files, file])
-  }
-
-  const onSubmit = (file) => {
-    const url = 'https://strapi-tungtung.herokuapp.com/questions/counter'
-    const formData = new FormData()
-    formData.append('files', file)
-
-    const config = {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }
-    return axios.post(url, formData, config)
-  }
-
-  const deleteRow = id => {
-    setFiles(files.filter(file => file.id !== id))
-  }
-
+const App = () => {
   return (
     <>
-      <div className='container'>
-        <div className='flex-row'>
-          <div className='flex-large'>
-            <UploadFile onChangeFile={onChangeFile} onSubmit={onSubmit} onAnalyticFile={onAnalyticFile} />
-          </div>
-          <div className='flex-large'>
-            <label>ANALYTICS</label>
-            <FileTable files={files} deleteRow={deleteRow} />
-          </div>
-          <MusicPlayer theme='light' top={500} left={50} auto={false} />
-        </div>
+      <div className='App'>
+        <Router history={history}>
+          <TopBar />
+          <Route
+            path='/'
+            exact
+            component={props => (
+              <HomePage {...props} />
+            )}
+          />
+          <Route
+            path='/editor'
+            exact
+            component={props => (
+              <EditorPage {...props} documentStore={documentStore} />
+            )}
+          />
+        </Router>
       </div>
     </>
   )
 }
-
 export default App

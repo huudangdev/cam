@@ -80,7 +80,7 @@ const UploadFile = ({ onChangeFile, onSubmit, onAnalyticFile }) => {
         <form method='post' action='#' id='#'>
           <div className='form-group files'>
             <label>UPLOAD YOUR FILE</label>
-            <input type='file' className='form-control' multiple='' accept='.docx,.pdf' onChange={onChangeHandler} />
+            <input type='file' className='form-control' multiple='' accept='.pdf' onChange={onChangeHandler} />
             <button type='button' className='btn btn-success btn-block' onClick={onClickHandler}>Upload</button>
           </div>
         </form>
