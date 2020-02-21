@@ -8,24 +8,21 @@ const root = '/cam'
 function TopBar ({ location }) {
   return (
     <>
-      <HashRouter basename='/'>
-
-        <Navbar bg='primary' expand='lg' variant='dark'>
-          <Navbar.Brand href={root + '/'}>Beta - 1.0.1</Navbar.Brand>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse id='basic-navbar-nav'>
-            <Nav className='mr-auto'>
-              <Nav.Link href={root + '/'}>
+      <Navbar bg='primary' expand='lg' variant='dark'>
+        <Navbar.Brand href={root + '/'}>Beta - 1.0.1</Navbar.Brand>
+        <Navbar.Toggle aria-controls='basic-navbar-nav' />
+        <Navbar.Collapse id='basic-navbar-nav'>
+          <Nav className='mr-auto'>
+            <Nav.Link href={root + '/'}>
             Upload files
-              </Nav.Link>
-              <Nav.Link href={root + '/editor'}>
+            </Nav.Link>
+            <Nav.Link href={root + '/editor'}>
             Editor
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
-        <MusicPlayer theme='light' top={500} left={50} auto={false} />
-      </HashRouter>
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <MusicPlayer theme='light' top={500} left={50} auto={false} />
     </>
   )
 }
