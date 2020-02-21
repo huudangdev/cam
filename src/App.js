@@ -9,6 +9,7 @@ import './App.css'
 
 const history = createHistory()
 const documentStore = new DocumentStore()
+const root = '/cam'
 
 const App = () => {
   return (
@@ -17,14 +18,14 @@ const App = () => {
         <Router history={history}>
           <TopBar />
           <Route
-            path='/'
+            path={root + '/'}
             exact
             component={props => (
               <HomePage {...props} />
             )}
           />
           <Route
-            path='/editor'
+            path={root + '/editor'}
             exact
             component={props => (
               <EditorPage {...props} documentStore={documentStore} />
