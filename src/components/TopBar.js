@@ -3,19 +3,20 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import { withRouter } from 'react-router-dom'
 import MusicPlayer from './MusicPlayer'
+const root = '/cam'
 
 function TopBar ({ location }) {
   return (
     <>
       <Navbar bg='primary' expand='lg' variant='dark'>
-        <Navbar.Brand href='/'>Beta - 1.0.1</Navbar.Brand>
+        <Navbar.Brand href={root + '/'}>Beta - 1.0.1</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href='/' active={location.pathname === '/'}>
+            <Nav.Link href={root + '/'} active={location.pathname === '/'}>
             Upload files
             </Nav.Link>
-            <Nav.Link href='/editor' active={location.pathname === '/editor'}>
+            <Nav.Link href={root + '/editor'} active={location.pathname === '/editor'}>
             Editor
             </Nav.Link>
           </Nav>
