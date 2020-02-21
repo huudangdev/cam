@@ -1,7 +1,7 @@
 import React from 'react'
 import HomePage from './HomePage'
 import EditorPage from './Editor'
-import { Router, Route } from 'react-router-dom'
+import { Router, Route, HashRouter } from 'react-router-dom'
 import { createBrowserHistory as createHistory } from 'history'
 import TopBar from './components/TopBar'
 import { DocumentStore } from './store'
@@ -15,23 +15,25 @@ const App = () => {
   return (
     <>
       <div className='App'>
-        <Router history={history}>
-          <TopBar />
-          <Route
-            path={root + '/'}
-            exact
-            component={props => (
-              <HomePage {...props} />
-            )}
-          />
-          <Route
-            path={root + '/editor'}
-            exact
-            component={props => (
-              <EditorPage {...props} documentStore={documentStore} />
-            )}
-          />
-        </Router>
+        <HashRouter basename='/'>
+          <Router history={history}>
+            <TopBar />
+            <Route
+              path={root + '/'}
+              exact
+              component={props => (
+                <HomePage {...props} />
+              )}
+            />
+            <Route
+              path={root + '/editor'}
+              exact
+              component={props => (
+                <EditorPage {...props} documentStore={documentStore} />
+              )}
+            />
+          </Router>
+        </HashRouter>
       </div>
     </>
   )
