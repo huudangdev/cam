@@ -13,10 +13,10 @@ function TopBar ({ location }) {
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav className='mr-auto'>
-            <Nav.Link href={root + '/'} active={location.pathname === '/'}>
+            <Nav.Link href={root + '/'}>
             Upload files
             </Nav.Link>
-            <Nav.Link href={root + '/editor'} active={location.pathname === '/editor'}>
+            <Nav.Link href={root + '/editor'}>
             Editor
             </Nav.Link>
           </Nav>
