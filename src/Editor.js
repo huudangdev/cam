@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
 import DocumentForm from './DocumentForm'
 import Modal from 'react-bootstrap/Modal'
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
@@ -69,7 +68,7 @@ function EditorPage ({ documentStore, history }) {
     <div className='page'>
       <h1 className='text-center'>Documents</h1>
       <ButtonToolbar onClick={openAddTemplateModal}>
-        <Button variant='primary'>Add Document</Button>
+        <Button variant='outline-warning'>Add Document</Button>
       </ButtonToolbar>
       <Modal show={openAddModal} onHide={closeAddModal}>
         <Modal.Header closeButton>
@@ -141,4 +140,4 @@ function EditorPage ({ documentStore, history }) {
     </div>
   )
 }
-export default withRouter(observer(EditorPage))
+export default (observer(EditorPage))

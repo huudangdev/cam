@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import FormData from 'form-data'
 import './App.css'
-import Swal from 'sweetalert2'
 
 import UploadFile from './components/UploadFile'
 import FileTable from './components/FileTable'
@@ -35,17 +34,6 @@ const HomePage = () => {
   const deleteRow = id => {
     setFiles(files.filter(file => file.id !== id))
   }
-
-  useEffect(() => {
-    Swal.fire({
-      title: 'Update lần này có gì ta ?',
-      text: 'Tính năng editor convert docx to html. - Editor cải thiện tốc độ nhiều hơn. - Format text và edit trực tiếp trực quan.',
-      icon: 'info',
-      confirmButtonColor: '#3085d6',
-      confirmButtonText: 'Okay',
-      timer: 10000
-    })
-  }, [])
 
   return (
     <>

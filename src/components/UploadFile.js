@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Swal from 'sweetalert2'
 import ReactLoading from 'react-loading'
+import { Button } from 'react-bootstrap'
 
 const optionsLoading = {
   type: 'cylon',
@@ -81,7 +82,7 @@ const UploadFile = ({ onChangeFile, onSubmit, onAnalyticFile }) => {
           <div className='form-group files'>
             <label>UPLOAD YOUR FILE</label>
             <input type='file' className='form-control' multiple='' accept='.pdf' onChange={onChangeHandler} />
-            <button type='button' className='btn btn-success btn-block' onClick={onClickHandler}>Upload</button>
+            <Button type='button' className='btn btn-success btn-block' onClick={onClickHandler} variant='info'>Upload</Button>
           </div>
         </form>
       </>

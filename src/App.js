@@ -1,44 +1,60 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import HomePage from './HomePage'
 import EditorPage from './Editor'
-import { Router, Route, HashRouter } from 'react-router-dom'
-import { createBrowserHistory as createHistory } from 'history'
 import TopBar from './components/TopBar'
-import { DocumentStore } from './store'
 import './App.css'
+import Swal from 'sweetalert2'
 
-const history = createHistory({
-  basename: '', // The base URL of the app (see below)
-  forceRefresh: false, // Set true to force full page refreshes
-  keyLength: 6, // The length of location.key
-  // A function to use to confirm navigation with the user (see below)
-  getUserConfirmation: (message, callback) => callback(window.confirm(message))
-})
-const documentStore = new DocumentStore()
 const root = '/cam'
 
 const App = () => {
-  return (
-    <>
-      <div className='App'>
-        <Router history={history}>
-          <TopBar />
-          <Route
-            path={root + '/'}
-            exact
-            component={props => (
-              <HomePage {...props} />
-            )}
-          />
-          <Route
-            path={root + '/editor'} exact
-            component={props => (
-              <EditorPage {...props} documentStore={documentStore} />
-            )}
-          />
-        </Router>
-      </div>
-    </>
-  )
+  const [status, setStatus] = useState('')
+
+  const handleOnClickHome = () => {
+    setStatus('home')
+  }
+
+  const handleOnClickEditor = () => {
+    setStatus('editor')
+  }
+
+  useEffect(() => {
+    Swal.fire({
+      title: 'Update lần này có gì ta ?',
+      text: 'Tính năng editor convert docx to html. - Editor cải thiện tốc độ nhiều hơn. - Format text và edit trực tiếp trực quan.',
+      icon: 'info',
+      showCancelButton: true,
+      confirmButtonColor: '#B0E0E6',
+      cancelButtonColor: '#F4A460',
+      cancelButtonText: 'E d i t o r',
+      confirmButtonText: 'U p l o a d'
+    }).then((result) => {
+      if (result.value) {
+        setStatus('home')
+      } else if (
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        setStatus('editor')
+      }
+    })
+  }, [])
+  if (status === 'home') {
+    return (
+      <>
+        <div className='App'>
+          <TopBar handleOnClickHome={handleOnClickHome} handleOnClickEditor={handleOnClickEditor} />
+          <HomePage />
+        </div>
+      </>)
+  } else {
+    return (
+      <>
+        <div className='App'>
+          <TopBar handleOnClickHome={handleOnClickHome} handleOnClickEditor={handleOnClickEditor} />
+          <EditorPage />
+        </div>
+      </>
+    )
+  }
 }
 export default App
